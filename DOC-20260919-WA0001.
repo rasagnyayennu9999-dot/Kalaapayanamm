@@ -1,0 +1,845 @@
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalaa Payanamm | Handcrafted Art & Bespoke Commissions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-cream: #fbf7ee;
+      --bg-card: #f4ecdc;
+      --bg-dark: #12100d;
+      --bg-dark-card: #1c1813;
+      --gold: #c98b2c;
+      --gold-light: #dfaa4f;
+      --gold-dark: #916116;
+      --text-dark: #221e1a;
+      --text-muted: #746c63;
+      --text-light: #e8e2d8;
+      --border-cream: #e5dac4;
+      --border-dark: #2f271f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 247, 238, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .btn-contact {
+      background: var(--gold);
+      color: #fff !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      transition: background 0.3s ease !important;
+    }
+
+    .btn-contact:hover {
+      background: var(--gold-dark) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+      background: linear-gradient(rgba(18, 16, 13, 0.45), rgba(18, 16, 13, 0.7)),
+                  url('https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .hero-tag {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 0.35rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: #f7eee2;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #e4d8c7;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #fff;
+      border: 1px solid var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    .btn-green {
+      background: #1e7b48;
+      color: #fff;
+      border: 1px solid #1e7b48;
+    }
+
+    .btn-green:hover {
+      background: #145933;
+      border-color: #145933;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+    }
+
+    /* Section Headings */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* About / The Artist */
+    .artist-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .artist-frame {
+      background: #eee4d1;
+      border: 2px solid var(--gold);
+      padding: 1.5rem;
+      box-shadow: 12px 12px 0 var(--border-cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+      text-align: center;
+    }
+
+    .artist-frame-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-cream);
+      padding: 1.2rem;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .phone-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .phone-btn {
+      flex: 1;
+      text-align: center;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Gallery (Dark Theme) */
+    .gallery-section {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: 6rem 5% 5rem;
+    }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 2rem auto 3.5rem;
+      max-width: 1050px;
+    }
+
+    .filter-btn {
+      background: #1d1914;
+      border: 1px solid var(--border-dark);
+      color: #baa895;
+      padding: 0.45rem 1rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .art-card {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 4px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #ded1c1;
+    }
+
+    .card-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+    }
+
+    /* Art Forms Section */
+    .art-forms-section {
+      padding: 6rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .form-item {
+      background: #fff;
+      border: 1px solid var(--border-cream);
+      padding: 2.2rem 1.8rem;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .form-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .cta-banner-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3.5rem;
+    }
+
+    /* Instagram & Social Cards */
+    .social-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-cream);
+      border-bottom: 1px solid var(--border-cream);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1050px;
+      margin: 2.5rem auto 0;
+    }
+
+    .social-card {
+      background: #fff;
+      border: 1px solid var(--border-cream);
+      padding: 2rem 1.5rem;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .social-icon {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .social-handle {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .social-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .social-link {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* Contact Section (Dark) */
+    .contact-section {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 6rem 5%;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+    }
+
+    .contact-info p {
+      color: #9f9486;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-heading {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-action-row {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      padding: 0.9rem 1.2rem;
+      color: #f1ebd8;
+      font-family: inherit;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b0a08;
+      border-top: 1px solid var(--border-dark);
+      color: #7d7265;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .brand-logo {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 820px) {
+      .artist-section, .contact-container {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand-logo">Kalaa Payanamm</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#art-forms">Art Forms</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact" class="btn-contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-tag">Handcrafted Custom Art</div>
+    <h1>Kalaa Payanamm</h1>
+    <p>Every stroke tells a story</p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn btn-gold">Explore Gallery</a>
+      <a href="https://wa.me/919063748296" target="_blank" class="btn btn-green">WhatsApp Us</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- About / Artist -->
+  <section class="artist-section" id="about">
+    <div class="artist-frame">
+      <div class="artist-frame-icon">🎨</div>
+      <p style="font-style: italic; color: #8a7862;">Mastery in Indian Folk & Contemporary Crafts</p>
+    </div>
+
+    <div>
+      <div class="section-eyebrow">The Artist</div>
+      <h2 class="section-title">Crafting <em>beauty</em> one art at a time</h2>
+      <p style="margin: 1.5rem 0; color: var(--text-muted);">
+        Welcome to Kalaa Payanamm — a journey through the rich tapestry of Indian and contemporary art forms. From the intricate mud-work of Lippan art to the majestic gold of Tanjore paintings, every piece is born from passion, tradition, and a desire to make beauty accessible. All works are customisable and made to order.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Art Forms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Handmade</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">✨</div>
+          <div class="stat-label">Customisable</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">🎁</div>
+          <div class="stat-label">Gifting Available</div>
+        </div>
+      </div>
+
+      <div class="phone-buttons">
+        <a href="tel:9063748296" class="phone-btn">📞 9063748296</a>
+        <a href="tel:9010036906" class="phone-btn">📞 9010036906</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header">
+      <div class="section-eyebrow">Portfolio</div>
+      <h2 class="section-title">The <em>Gallery</em></h2>
+      <p style="color: #928373; font-size: 0.85rem; margin-top: 0.4rem;">Browse by art form. Click any piece for a closer look.</p>
+    </div>
+
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All Works</button>
+      <button class="filter-btn" data-filter="lippan">Lippan Art</button>
+      <button class="filter-btn" data-filter="tanjore">Tanjore Paintings</button>
+      <button class="filter-btn" data-filter="fabric">Fabric Painting</button>
+      <button class="filter-btn" data-filter="mural">Wall Murals</button>
+      <button class="filter-btn" data-filter="carvings">Pencil Carvings</button>
+      <button class="filter-btn" data-filter="canvas">Canvas Paintings</button>
+      <button class="filter-btn" data-filter="wall">Wall Paintings</button>
+      <button class="filter-btn" data-filter="charcoal">Charcoal / Graphite</button>
+      <button class="filter-btn" data-filter="gifts">Handmade Gifts</button>
+      <button class="filter-btn" data-filter="resin">Resin Arts</button>
+      <button class="filter-btn" data-filter="hoop">Embroidery Hoop</button>
+      <button class="filter-btn" data-filter="string">String Art</button>
+      <button class="filter-btn" data-filter="platters">Engagement Platters</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="art-card" data-category="lippan"><div class="card-icon">🪞</div><div class="card-title">Lippan Art</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="tanjore"><div class="card-icon">🥇</div><div class="card-title">Tanjore Paintings</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="fabric"><div class="card-icon">🎨</div><div class="card-title">Fabric Painting</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="mural"><div class="card-icon">🖼️</div><div class="card-title">Wall Murals</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="carvings"><div class="card-icon">✏️</div><div class="card-title">Pencil Carvings</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="canvas"><div class="card-icon">🖌️</div><div class="card-title">Canvas Paintings</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="wall"><div class="card-icon">🏠</div><div class="card-title">Wall Paintings</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="charcoal"><div class="card-icon">🌑</div><div class="card-title">Charcoal / Graphite</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="gifts"><div class="card-icon">🎁</div><div class="card-title">Handmade Gifts</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="resin"><div class="card-icon">💎</div><div class="card-title">Resin Arts</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="hoop"><div class="card-icon">🪄</div><div class="card-title">Embroidery Hoop</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="string"><div class="card-icon">🕸️</div><div class="card-title">String Art</div><div class="card-sub">Coming Soon</div></div>
+      <div class="art-card" data-category="platters"><div class="card-icon">📋</div><div class="card-title">Engagement Platters</div><div class="card-sub">Coming Soon</div></div>
+    </div>
+  </section>
+
+  <!-- Art Forms Section -->
+  <section class="art-forms-section" id="art-forms">
+    <div class="section-header">
+      <div class="section-eyebrow">What We Create</div>
+      <h2 class="section-title">Art <em>Forms</em></h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+        Every art form is available as custom commissions — for homes, gifting, events, and weddings.
+      </p>
+    </div>
+
+    <div class="forms-grid">
+      <div class="form-item"><div class="form-icon">🪞</div><div class="form-title">Lippan Art</div><div class="form-desc">Traditional Kutch mud & mirror work, radiant geometric panels.</div></div>
+      <div class="form-item"><div class="form-icon">🥇</div><div class="form-title">Tanjore Paintings</div><div class="form-desc">Classical South Indian goldwork on canvas & sarees.</div></div>
+      <div class="form-item"><div class="form-icon">🎨</div><div class="form-title">Fabric Painting</div><div class="form-desc">Hand-painted sarees, dupattas & wearable art.</div></div>
+      <div class="form-item"><div class="form-icon">🖼️</div><div class="form-title">Wall Murals</div><div class="form-desc">Large-scale painted murals for homes & spaces.</div></div>
+      <div class="form-item"><div class="form-icon">✏️</div><div class="form-title">Pencil Carvings</div><div class="form-desc">Delicate hyper-realistic pencil-on-pencil sculptures.</div></div>
+      <div class="form-item"><div class="form-icon">🖌️</div><div class="form-title">Canvas Paintings</div><div class="form-desc">Acrylic, oil & mixed-media custom artworks.</div></div>
+      <div class="form-item"><div class="form-icon">🏠</div><div class="form-title">Wall Paintings</div><div class="form-desc">Decorative on-wall art & feature wall designs.</div></div>
+      <div class="form-item"><div class="form-icon">🌑</div><div class="form-title">Charcoal / Graphite</div><div class="form-desc">Portraits & fine-art charcoal drawings.</div></div>
+      <div class="form-item"><div class="form-icon">🎁</div><div class="form-title">Handmade Gifts</div><div class="form-desc">Fully customisable keepsakes & gifting pieces.</div></div>
+      <div class="form-item"><div class="form-icon">💎</div><div class="form-title">Resin Arts</div><div class="form-desc">Resin jewellery, coasters, trays & decor.</div></div>
+      <div class="form-item"><div class="form-icon">🪄</div><div class="form-title">Embroidery Hoop</div><div class="form-desc">Framed needlework & hoop art for gifting.</div></div>
+      <div class="form-item"><div class="form-icon">🕸️</div><div class="form-title">String Art</div><div class="form-desc">Geometric & mandala string nail art panels.</div></div>
+      <div class="form-item"><div class="form-icon">📋</div><div class="form-title">Engagement Platters</div><div class="form-desc">Bespoke ring platters & ceremony decor.</div></div>
+    </div>
+
+    <div class="cta-banner-buttons">
+      <a href="#contact" class="btn btn-gold">Request a Commission</a>
+      <a href="tel:9063748296" class="btn btn-outline" style="color: var(--text-dark); border-color: var(--text-dark);">Call to Order</a>
+    </div>
+  </section>
+
+  <!-- Instagram / Follow Section -->
+  <section class="social-section" id="instagram">
+    <div class="section-eyebrow">Follow the Journey</div>
+    <h2 class="section-title">On <em>Instagram</em></h2>
+    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Catch the latest works, process videos, and behind-the-scenes on Instagram.</p>
+
+    <div class="social-grid">
+      <div class="social-card">
+        <div class="social-icon">📸</div>
+        <div class="social-handle">@kalaa_payanamm</div>
+        <div class="social-label">Main Art Page</div>
+        <a href="https://instagram.com/kalaa_payanamm" target="_blank" class="social-link">Follow →</a>
+      </div>
+      <div class="social-card">
+        <div class="social-icon">🔍</div>
+        <div class="social-handle">@rasagnya_microartist_99</div>
+        <div class="social-label">Micro Art Page</div>
+        <a href="https://instagram.com/rasagnya_microartist_99" target="_blank" class="social-link">Follow →</a>
+      </div>
+      <div class="social-card">
+        <div class="social-icon">💬</div>
+        <div class="social-handle">+91 90637 48296</div>
+        <div class="social-label">Main Number</div>
+        <a href="https://wa.me/919063748296" target="_blank" class="social-link">Chat Now →</a>
+      </div>
+      <div class="social-card">
+        <div class="social-icon">💬</div>
+        <div class="social-handle">+91 90100 36906</div>
+        <div class="social-label">Alternate Number</div>
+        <a href="https://wa.me/919010036906" target="_blank" class="social-link">Chat Now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="section-eyebrow">Let's Create Together</div>
+        <h2 class="section-title" style="color: #fff; margin-bottom: 1.5rem;">Get in <em>Touch</em></h2>
+        <p>Commission a custom piece, inquire about pricing, or just say hello. All artworks are customisable.</p>
+
+        <div class="contact-detail-block">
+          <div class="detail-heading">Call / WhatsApp</div>
+          <div>+91 90637 48296</div>
+          <div>+91 90100 36906</div>
+        </div>
+
+        <div class="contact-detail-block">
+          <div class="detail-heading">Email</div>
+          <div>Kalaapayanamm@99gmail.com</div>
+        </div>
+
+        <div class="contact-detail-block">
+          <div class="detail-heading">Instagram</div>
+          <div>@kalaa_payanamm</div>
+          <div>@rasagnya_microartist_99</div>
+        </div>
+
+        <div class="contact-action-row">
+          <a href="tel:9063748296" class="btn btn-gold">📞 Call Now</a>
+          <a href="https://wa.me/919063748296" target="_blank" class="btn btn-green">💬 WhatsApp</a>
+          <a href="mailto:Kalaapayanamm@99gmail.com" class="btn btn-outline">✉️ Email Us</a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Inquiry sent successfully!');">
+        <input type="text" class="form-input" placeholder="Your Name" required />
+        <input type="tel" class="form-input" placeholder="Phone Number" required />
+        <input type="email" class="form-input" placeholder="Email Address" required />
+        <select class="form-select" required>
+          <option value="" disabled selected>Select Art Form</option>
+          <option value="lippan">Lippan Art</option>
+          <option value="tanjore">Tanjore Paintings</option>
+          <option value="fabric">Fabric Painting</option>
+          <option value="mural">Wall Murals</option>
+          <option value="carving">Pencil Carvings</option>
+          <option value="canvas">Canvas Paintings</option>
+          <option value="wall">Wall Paintings</option>
+          <option value="charcoal">Charcoal / Graphite</option>
+          <option value="gifts">Handmade Gifts</option>
+          <option value="resin">Resin Arts</option>
+          <option value="hoop">Embroidery Hoop</option>
+          <option value="string">String Art</option>
+          <option value="platters">Engagement Platters</option>
+          <option value="other">Other / Custom Request</option>
+        </select>
+        <textarea class="form-textarea" placeholder="Tell me about your vision..."></textarea>
+        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; padding: 1rem;">Send Message ✦</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <a href="#" class="brand-logo">Kalaa Payanamm</a>
+    <p>© 2026 Kalaa Payanamm. All artworks are handcrafted & original.</p>
+    <p style="margin-top: 0.3rem;">9063748296 | 9010036906 | Kalaapayanamm@99gmail.com</p>
+  </footer>
+
+  <script>
+    // Category Filtering Script for Portfolio
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const artCards = document.querySelectorAll('.art-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        artCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
